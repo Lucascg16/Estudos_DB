@@ -84,8 +84,6 @@ select coluna from tabela group by coluna order by coluna desc;# ordena em ordem
 select coluna from tabela group by coluna order by coluna asc;# ordena em ordem crescente
 select coluna from tabela group by coluna order by coluna asc limit 1;# limita o resultado a apenas um registro exibido
 
-
-
 #Comandos de agregação, tambem podem ser utilizadas em uma única chamada
 #count
 select count(*) from tabela;# retorna o número de registros que exsitem na tabela selecionada
@@ -101,8 +99,8 @@ select sum(coluna) from tabela;# retorna o valor médio encontrado na coluna sel
 
 #Ceil
 select ceil(valor) from tabela;# arredonda para cima
-#flor
-select flor(valor);# arredonda para baixo
+#floor
+select floor(valor);# arredonda para baixo
 #truncate
 select truncate(valor, 1);# remove os números após a virgula e mostra apenas o número inteiro
 						  # o segundo parametro indica a quantidade de números que se manteram no numero após truncar
