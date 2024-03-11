@@ -28,6 +28,8 @@ CREATE TABLE Aluno (#exemplo de criacao de tabela com varios elementos
     cfp varchar(11),
     email varchar(150)
 );
+# Em caso de nome de coluna ser o mesmo que uma palavra reservada do SGBD é utilizada crase para identificar a coluna
+# É importante evitar uso de palavra reservada nas colunas pois pode dar problemas em outros pontos do projeto
 
 desc aluno;#mostra a descricao de cada atributo da tabela #exclusivo do MYSQL
 
