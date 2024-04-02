@@ -16,6 +16,7 @@ use universidade_u;
 
 # 1FN - As tabelas devem ser atômicas, ou seja, devem ter apenas um valor especifico.
 
+#Exemplos de comandos mais utlizados
 CREATE TABLE Aluno (#exemplo de criacao de tabela com varios elementos
     sexo char(1),
     telefone varchar(20),
@@ -50,7 +51,7 @@ alter table tabela add constraint nomeConstraint #Adicionar uma constraint na ta
 drop table alunos;#desativa a tabela selecionada
 
 #Insert dado
-insert into tabela( colunas ) values ( valores respectivos das colunas );
+insert into tabela( colunas ) values ( 'valores respectivos das colunas - sem aspas' );
 
 #Select dado
 #O '*' indica que tudo na tabela será retornado, caso queira apenas uma o algumas colunas especificar deverá indicar
@@ -111,6 +112,27 @@ select round(valor, 1);# arredondamento inteligente
 
 #Aplicando um apelido para o resultado
 select max(coluna) from tabela as maior_valor;
+
+#Datas
+select curdate();# ou current_date() # Retorna a data atual do sistema
+select now();# Faz o mesmo dos de cima, mas retorna tambem as horas
+select extract(day from 'qualquer data');# extrai parde da data, podendo ser: day, month ou year
+select date_add('qualquer data', interval 4 day);#adiciona um intervalo de tempo, podendo ser: second, minute, hour, day, month ou year
+select datediff('qualquer data', 'qualquer data');#calcula a diferença de dias entre duas datas
+select period_diff('199501','199601');#calcula a diferença de meses entre duas datas, não recebe dias como paramentro
+select dayofyear('qualquer data');#retorna o dia do ano selecionado
+select timestampdiff(year, 'qualquer data', 'qualquer data');
+
+#Format da data
+select date_format(curdate(), '%d/%m/%Y');
+/*
+%d - dia do mês (de 01 até 31)
+%D - dia do mês com sufixo em inglêsounds like
+%m - mês (de 1 a 12)
+%M - nome do mês em inglês
+%y - ano(dois digitos)
+%Y - ano(quatro digitos) 
+*/
 
 #Update dado
 update tabela set coluna = valor where coluna = valor;# ex: altera idade existente na coluna onde o nome for pedro
